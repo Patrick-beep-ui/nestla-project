@@ -4,6 +4,11 @@ import TrustBar from "@/components/landing/TrustBar";
 import BriefAbout from "@/components/landing/BriefAbout";
 import Benefits from "@/components/landing/Benefits";
 import Services from "@/components/landing/Services";
+import SplitSection from "@/components/landing/SplitSection";
+import StatsBar from "@/components/landing/StatsBar";
+import FeatureGrid from "@/components/landing/FeatureGrid";
+import CardShowcase from "@/components/landing/CardShowcase";
+import ValueStack from "@/components/landing/ValueStack";
 import CtaDownload from "@/components/landing/CtaDownload";
 import Testimonials from "@/components/landing/Testimonials";
 import FinalCta from "@/components/landing/FinalCta";
@@ -19,6 +24,11 @@ const Index = () => (
       <BriefAbout />
       <Benefits />
       <Services />
+      <SplitSection />
+      <StatsBar />
+      <FeatureGrid />
+      <CardShowcase />
+      <ValueStack />
       <CtaDownload />
       <Testimonials />
       <FinalCta />
