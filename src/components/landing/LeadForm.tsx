@@ -42,14 +42,15 @@ export default function LeadForm() {
         className={`container mx-auto px-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
         <div className="mx-auto max-w-2xl text-center">
+          {/* Questionnaire: Automation Goals + Follow-up Tone */}
           <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
-            Let's Talk
+            [CTA Section Label]
           </p>
           <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-            Ready to move faster?
+            [Conversion heading — urgency + benefit]
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Tell us about your challenge. We'll respond within one business day.
+            [Supporting text — sets expectation for follow-up (email/SMS), builds trust, reduces friction]
           </p>
         </div>
 
@@ -125,7 +126,7 @@ export default function LeadForm() {
               size="lg"
               className="w-full rounded-full text-base font-semibold transition-transform hover:scale-[1.02]"
             >
-              Send Message <ArrowRight className="ml-1" size={18} />
+              [Form Submit CTA Label] <ArrowRight className="ml-1" size={18} />
             </Button>
           </form>
         </Form>

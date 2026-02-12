@@ -1,21 +1,22 @@
 import { TrendingUp, Shield, Zap } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
+// Questionnaire: Key Benefits to Highlight → 3 core benefits
 const benefits = [
   {
     icon: TrendingUp,
-    title: "Revenue Acceleration",
-    desc: "Data-driven strategies that identify growth levers and turn them into measurable revenue gains.",
+    title: "[Benefit #1 Title]",
+    desc: "[Benefit #1 description — maps to a primary audience pain point and decision driver]",
   },
   {
     icon: Shield,
-    title: "Risk Mitigation",
-    desc: "Proactive frameworks that protect your business from operational, financial, and regulatory risk.",
+    title: "[Benefit #2 Title]",
+    desc: "[Benefit #2 description — addresses trust, risk, or reliability concern]",
   },
   {
     icon: Zap,
-    title: "Operational Efficiency",
-    desc: "Streamlined processes and automation that reduce costs and free your team to focus on what matters.",
+    title: "[Benefit #3 Title]",
+    desc: "[Benefit #3 description — highlights efficiency, speed, or competitive edge]",
   },
 ];
 
@@ -27,9 +28,10 @@ export default function Benefits() {
       <div
         className={`container mx-auto px-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
-        <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">Why Nestla</p>
+        {/* Questionnaire: Brand Values & Competitive Differentiation */}
+        <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">[Section Label from Brand Values]</p>
         <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-          Built for outcomes,<br className="hidden md:block" /> not just outputs
+          [Value proposition heading — why choose this brand]
         </h2>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">

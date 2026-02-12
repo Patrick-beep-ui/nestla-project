@@ -1,24 +1,25 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Quote } from "lucide-react";
 
+// Questionnaire: Social Proof & Credibility Indicators
 const testimonials = [
   {
-    quote: "Nestla helped us cut operational costs by 32% in under six months. Their team felt like an extension of ours.",
-    name: "Sarah Chen",
-    title: "COO",
-    company: "Meridian Health",
+    quote: "[Client testimonial #1 — outcome-focused, reflecting a key pain point resolved]",
+    name: "[Client Name]",
+    title: "[Client Title]",
+    company: "[Client Company]",
   },
   {
-    quote: "The strategic clarity they brought to our expansion plan was game-changing. We entered two new markets ahead of schedule.",
-    name: "James Okoro",
-    title: "CEO",
-    company: "Atlas Logistics",
+    quote: "[Client testimonial #2 — speaks to trust, speed, or quality of engagement]",
+    name: "[Client Name]",
+    title: "[Client Title]",
+    company: "[Client Company]",
   },
   {
-    quote: "Working with Nestla gave us the confidence to restructure our entire sales pipeline — revenue is up 45% year-over-year.",
-    name: "Maria Lopez",
-    title: "VP of Sales",
-    company: "Prism Financial",
+    quote: "[Client testimonial #3 — quantifiable result or emotional transformation]",
+    name: "[Client Name]",
+    title: "[Client Title]",
+    company: "[Client Company]",
   },
 ];
 
@@ -30,9 +31,10 @@ export default function Testimonials() {
       <div
         className={`container mx-auto px-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
-        <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">Results</p>
+        {/* Questionnaire: Social Proof / Credibility */}
+        <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">[Social Proof Label]</p>
         <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-          What our clients say
+          [Testimonials heading — what clients experience]
         </h2>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
