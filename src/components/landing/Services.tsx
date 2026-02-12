@@ -1,16 +1,17 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
+// Questionnaire: Services, Offer & Competitive Differentiation
 const services = [
   {
-    label: "Strategy",
-    title: "Growth & Transformation Advisory",
-    desc: "End-to-end strategic planning that aligns your vision with executable roadmaps — from market entry to organizational redesign.",
+    label: "[Service Category #1]",
+    title: "[Service #1 Title]",
+    desc: "[Service #1 description — what it includes, who it's for, and the outcome it delivers]",
     gradient: "from-primary/20 to-accent/10",
   },
   {
-    label: "Operations",
-    title: "Process Optimization & Automation",
-    desc: "We audit, redesign, and automate your core workflows so your team delivers more with less friction and cost.",
+    label: "[Service Category #2]",
+    title: "[Service #2 Title]",
+    desc: "[Service #2 description — positions against competitor weakness or audience frustration]",
     gradient: "from-accent/20 to-primary/10",
   },
 ];
@@ -23,9 +24,10 @@ export default function Services() {
       <div
         className={`container mx-auto px-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
-        <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">Services</p>
+        {/* Questionnaire: Services & Offer Overview */}
+        <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">[Services Section Label]</p>
         <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-          What we deliver
+          [Services heading — what you deliver]
         </h2>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">

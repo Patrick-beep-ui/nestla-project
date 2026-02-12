@@ -1,6 +1,7 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const logos = ["Acme Corp", "Globex", "Initech", "Umbrella", "Stark Industries", "Wayne Enterprises"];
+// Questionnaire: Available Brand Assets → client/partner logos
+const logos = ["[Client/Partner #1]", "[Client/Partner #2]", "[Client/Partner #3]", "[Client/Partner #4]", "[Client/Partner #5]", "[Client/Partner #6]"];
 
 export default function TrustBar() {
   const { ref, isVisible } = useScrollReveal();
