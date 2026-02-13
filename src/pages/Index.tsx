@@ -9,6 +9,9 @@ import StatsBar from "@/components/landing/StatsBar";
 import FeatureGrid from "@/components/landing/FeatureGrid";
 import CardShowcase from "@/components/landing/CardShowcase";
 import ValueStack from "@/components/landing/ValueStack";
+import NumberedCards from "@/components/landing/NumberedCards";
+import PeopleGrid from "@/components/landing/PeopleGrid";
+import MetricCards from "@/components/landing/MetricCards";
 import CtaDownload from "@/components/landing/CtaDownload";
 import Testimonials from "@/components/landing/Testimonials";
 import FinalCta from "@/components/landing/FinalCta";
@@ -29,6 +32,9 @@ const Index = () => (
       <FeatureGrid />
       <CardShowcase />
       <ValueStack />
+      <NumberedCards />
+      <PeopleGrid />
+      <MetricCards />
       <CtaDownload />
       <Testimonials />
       <FinalCta />
