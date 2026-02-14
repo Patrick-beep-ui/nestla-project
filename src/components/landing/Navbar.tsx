@@ -3,8 +3,8 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
+  { label: "How It Works", href: "#benefits" },
   { label: "Services", href: "#services" },
-  { label: "About", href: "#benefits" },
   { label: "Results", href: "#testimonials" },
 ];
 
@@ -35,7 +35,7 @@ export default function Navbar() {
             </button>
           ))}
           <Button size="sm" onClick={() => scrollTo("#contact")} className="rounded-full px-5">
-            Get in Touch →
+            Apply Now →
           </Button>
         </div>
 
@@ -58,10 +58,11 @@ export default function Navbar() {
             </button>
           ))}
           <Button size="sm" onClick={() => scrollTo("#contact")} className="mt-2 w-full rounded-full">
-            Get in Touch →
+            Apply Now →
           </Button>
         </div>
       )}
     </nav>
   );
 }
+

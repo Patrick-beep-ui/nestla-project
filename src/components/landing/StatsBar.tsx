@@ -1,16 +1,20 @@
 /**
- * StatsBar — Large-number emphasis block with supporting labels.
- * Use cases: credibility metrics, company milestones, impact numbers, trust signals.
- * Inspired by Scale AI stats section (image-13).
+ * SECTION DOCUMENTATION
+ * ─────────────────────
+ * Primary Use Case: Credibility metrics — quantifiable proof points that build trust
+ * Best Funnel Position: Mid (after positioning, before detailed features)
+ * Why This Section Works: Large numbers grab attention and provide instant credibility.
+ *   The emphasis card row reinforces two key differentiators with context.
+ * Alternative Usage: Could show company milestones, market data, or campaign results.
  */
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const stats = [
-  { value: "[000]", label: "[Metric label #1]" },
-  { value: "[000]", label: "[Metric label #2]" },
-  { value: "[000]", label: "[Metric label #3]" },
-  { value: "[000]", label: "[Metric label #4]" },
+  { value: "3", label: "Independent Price Opinions" },
+  { value: "100%", label: "Seller-First Focus" },
+  { value: "$0", label: "Upfront Consultation Cost" },
+  { value: "12mo", label: "Flexible Selling Timeline" },
 ];
 
 export default function StatsBar() {
@@ -23,10 +27,10 @@ export default function StatsBar() {
       >
         <div className="mx-auto max-w-3xl text-center mb-16">
           <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
-            [Section label]
+            By the Numbers
           </p>
           <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-            [Headline for this metrics block]
+            Built Around What Sellers Actually Need
           </h2>
         </div>
 
@@ -45,19 +49,18 @@ export default function StatsBar() {
           ))}
         </div>
 
-        {/* Optional emphasis row — like Scale AI's bottom card */}
         <div className="mx-auto mt-14 max-w-3xl rounded-xl border border-border bg-card/60 p-8">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
             <div className="flex items-center gap-5">
-              <span className="font-heading text-4xl font-extrabold text-gradient">[00X]</span>
+              <span className="font-heading text-4xl font-extrabold text-gradient">ROI</span>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                [Expanded metric description — what this number means in context.]
+                Every home gets prep recommendations designed to increase your net return — not just your list price.
               </p>
             </div>
             <div className="flex items-center gap-5">
-              <span className="font-heading text-4xl font-extrabold text-gradient">[00Y]</span>
+              <span className="font-heading text-4xl font-extrabold text-gradient">24h</span>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                [Expanded metric description — what this number means in context.]
+                Your concierge team responds within 24 hours at every stage — from application to closing.
               </p>
             </div>
           </div>

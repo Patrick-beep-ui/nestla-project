@@ -1,3 +1,14 @@
+/**
+ * SECTION DOCUMENTATION
+ * ─────────────────────
+ * Primary Use Case: Hero / first impression — emotional hook + primary CTA
+ * Best Funnel Position: Top (above fold)
+ * Why This Section Works: Large typography + gradient accent creates immediate visual hierarchy.
+ *   Addresses the core pain point upfront ("sell for more without the stress") and provides
+ *   two clear conversion paths (apply CTA + learn more scroll).
+ * Alternative Usage: Could be repurposed as a campaign-specific landing header or seasonal promo block.
+ */
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -17,37 +28,33 @@ export default function Hero() {
       />
 
       <div className="container relative mx-auto px-6">
-      <div className="max-w-3xl">
-          {/* Questionnaire: Business Vision & Mission → tagline */}
+        <div className="max-w-3xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">
-            [Service Category from Questionnaire]
+            Seller Concierge
           </p>
 
-          {/* Questionnaire: Campaign Goals → primary headline addressing audience pain point */}
           <h1 className="font-heading text-4xl font-extrabold leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
-            [Primary Benefit Statement]{" "}
-            <span className="text-gradient">[Key Differentiator]</span>
+            Sell Your Home for More —{" "}
+            <span className="text-gradient">Without the Stress</span>
           </h1>
 
-          {/* Questionnaire: Target Audience + Pain Points → subheadline */}
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            [Subheadline addressing who you serve, what outcome you deliver, and why it matters — sourced from audience pain points and brand tone]
+            Nestla guides homeowners through a concierge-led selling plan — so you get clarity, confidence, and a stronger outcome without the pressure.
           </p>
 
-          {/* Questionnaire: Automation Goals → CTA aligned with follow-up flow */}
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Button
               size="lg"
               onClick={() => scrollTo("#contact")}
               className="rounded-full px-8 text-base font-semibold transition-transform hover:scale-105"
             >
-              [Primary CTA Label] <ArrowRight className="ml-1" size={18} />
+              Apply for a Free Seller Review <ArrowRight className="ml-1" size={18} />
             </Button>
             <button
               onClick={() => scrollTo("#benefits")}
               className="text-sm font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
             >
-              [Secondary CTA Label] ↓
+              See How It Works ↓
             </button>
           </div>
         </div>

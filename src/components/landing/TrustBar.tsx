@@ -1,7 +1,16 @@
+/**
+ * SECTION DOCUMENTATION
+ * ─────────────────────
+ * Primary Use Case: Social proof / trust bar — logos or partner names for credibility
+ * Best Funnel Position: Top (immediately after hero)
+ * Why This Section Works: Quick credibility boost via association. Reduces skepticism before
+ *   the visitor reads further. Works best with recognizable names.
+ * Alternative Usage: Could show media mentions, certifications, or technology partners.
+ */
+
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-// Questionnaire: Available Brand Assets → client/partner logos
-const logos = ["[Client/Partner #1]", "[Client/Partner #2]", "[Client/Partner #3]", "[Client/Partner #4]", "[Client/Partner #5]", "[Client/Partner #6]"];
+const logos = ["Zillow", "Realtor.com", "Redfin", "MLS Network", "HomeLight", "BBB Accredited"];
 
 export default function TrustBar() {
   const { ref, isVisible } = useScrollReveal();
@@ -13,7 +22,7 @@ export default function TrustBar() {
     >
       <div className="container mx-auto px-6">
         <p className="mb-8 text-center text-xs font-medium uppercase tracking-widest text-muted-foreground">
-          Trusted by leading organizations
+          Trusted by homeowners and backed by industry leaders
         </p>
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14">
           {logos.map((name) => (

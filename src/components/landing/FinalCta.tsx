@@ -1,3 +1,13 @@
+/**
+ * SECTION DOCUMENTATION
+ * ─────────────────────
+ * Primary Use Case: Final conversion push — last chance to convert before the form
+ * Best Funnel Position: Pre-Form (directly before LeadForm)
+ * Why This Section Works: Centered, distraction-free layout with bold headline creates urgency.
+ *   Reinforces the core promise and reduces remaining objections with reassurance copy.
+ * Alternative Usage: Could be used as a standalone CTA page section or exit-intent trigger.
+ */
+
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -12,15 +22,15 @@ export default function FinalCta() {
       >
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-            [Final conversion headline — last chance to convert, outcome-focused]
+            Your Home Deserves a Better Selling Experience
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-            [Closing reinforcement copy — restate the core promise, reduce friction, address remaining objections. Maps to Follow-up Tone & Automation Goals.]
+            No upfront costs. No pressure. Just a clear plan, honest pricing, and a team that puts your outcome first. Apply for your free seller review today.
           </p>
           <div className="mt-8">
             <Button size="lg" className="gap-2 text-base" asChild>
-              <a href="#lead-form">
-                [Final CTA Label — e.g. "Start Your Journey →"] <ArrowRight className="h-4 w-4" />
+              <a href="#contact">
+                Start Your Free Review <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
           </div>

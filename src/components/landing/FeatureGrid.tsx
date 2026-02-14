@@ -1,19 +1,23 @@
 /**
- * FeatureGrid — 3-column card grid with icons and descriptions.
- * Use cases: services overview, value pillars, feature list, process steps.
- * Inspired by Scale AI resource cards (image-12, image-16).
+ * SECTION DOCUMENTATION
+ * ─────────────────────
+ * Primary Use Case: Detailed feature/service grid — what's included in the Nestla Method
+ * Best Funnel Position: Mid (after stats, before card showcase)
+ * Why This Section Works: 6-card grid provides comprehensive coverage of the offer without
+ *   overwhelming. Icon + title + description pattern is highly scannable.
+ * Alternative Usage: Could present values, differentiators, FAQs-as-features, or process details.
  */
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Layers, Zap, Shield, Globe, BarChart3, Sparkles } from "lucide-react";
 
 const items = [
-  { icon: Layers, title: "[Item title #1]", desc: "[Short description of this item — one or two sentences that can explain a feature, service, or value.]" },
-  { icon: Zap, title: "[Item title #2]", desc: "[Short description of this item — one or two sentences that can explain a feature, service, or value.]" },
-  { icon: Shield, title: "[Item title #3]", desc: "[Short description of this item — one or two sentences that can explain a feature, service, or value.]" },
-  { icon: Globe, title: "[Item title #4]", desc: "[Short description of this item — one or two sentences that can explain a feature, service, or value.]" },
-  { icon: BarChart3, title: "[Item title #5]", desc: "[Short description of this item — one or two sentences that can explain a feature, service, or value.]" },
-  { icon: Sparkles, title: "[Item title #6]", desc: "[Short description of this item — one or two sentences that can explain a feature, service, or value.]" },
+  { icon: Layers, title: "Three Price Opinions", desc: "Three independent licensed realtors evaluate your home — giving you confidence in your asking price." },
+  { icon: Sparkles, title: "Nestla Touch Prep", desc: "Strategic improvements and staging recommendations designed to maximize your return on investment." },
+  { icon: Shield, title: "No-Pressure Guidance", desc: "Every recommendation is honest and transparent. We guide — you decide. No hard sells, ever." },
+  { icon: Globe, title: "Full Listing Coordination", desc: "From photography to showings to offer negotiation, your concierge team handles the details." },
+  { icon: BarChart3, title: "Smart Routing", desc: "If a traditional listing isn't the best fit, we'll connect you to a cash offer or alternative path." },
+  { icon: Zap, title: "Responsive Communication", desc: "Your dedicated team responds quickly at every stage. You'll always know what's happening next." },
 ];
 
 export default function FeatureGrid() {
@@ -26,13 +30,13 @@ export default function FeatureGrid() {
       >
         <div className="mx-auto max-w-3xl text-center mb-16">
           <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
-            [Section label]
+            What's Included
           </p>
           <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-            [Section headline goes here]
+            Everything You Need to Sell with Confidence
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-            [Supporting text that clarifies the value proposition of this block.]
+            The Nestla Method covers every stage of your selling journey — from pricing to preparation to closing.
           </p>
         </div>
 

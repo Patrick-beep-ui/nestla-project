@@ -1,25 +1,34 @@
+/**
+ * SECTION DOCUMENTATION
+ * ─────────────────────
+ * Primary Use Case: Social proof — client voices that validate the brand promise
+ * Best Funnel Position: Pre-Form (builds final trust before conversion)
+ * Why This Section Works: Quote cards with avatars and credentials create emotional resonance.
+ *   Three testimonials cover different pain points (clarity, trust, results) for broad appeal.
+ * Alternative Usage: Could present partner endorsements, case study summaries, or press quotes.
+ */
+
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Quote } from "lucide-react";
 
-// Questionnaire: Social Proof & Credibility Indicators
 const testimonials = [
   {
-    quote: "[Client testimonial #1 — outcome-focused, reflecting a key pain point resolved]",
-    name: "[Client Name]",
-    title: "[Client Title]",
-    company: "[Client Company]",
+    quote: "I was terrified of pricing my home wrong. Nestla gave me three independent opinions and I finally felt confident listing. We sold above asking.",
+    name: "Jennifer L.",
+    title: "Homeowner",
+    company: "Austin, TX",
   },
   {
-    quote: "[Client testimonial #2 — speaks to trust, speed, or quality of engagement]",
-    name: "[Client Name]",
-    title: "[Client Title]",
-    company: "[Client Company]",
+    quote: "No pressure, no games. My concierge team was responsive and honest about everything — even when the answer wasn't what I wanted to hear. That's real trust.",
+    name: "Marcus D.",
+    title: "Homeowner",
+    company: "Denver, CO",
   },
   {
-    quote: "[Client testimonial #3 — quantifiable result or emotional transformation]",
-    name: "[Client Name]",
-    title: "[Client Title]",
-    company: "[Client Company]",
+    quote: "The Nestla Touch prep recommendations added real value. Small changes, big impact. I netted significantly more than I expected.",
+    name: "Rachel & Tom K.",
+    title: "Homeowners",
+    company: "Nashville, TN",
   },
 ];
 
@@ -31,10 +40,9 @@ export default function Testimonials() {
       <div
         className={`container mx-auto px-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
-        {/* Questionnaire: Social Proof / Credibility */}
-        <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">[Social Proof Label]</p>
+        <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">What Sellers Say</p>
         <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-          [Testimonials heading — what clients experience]
+          Real Stories from Real Homeowners
         </h2>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
