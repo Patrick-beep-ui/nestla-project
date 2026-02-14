@@ -1,7 +1,11 @@
 /**
- * CardShowcase — Two large side-by-side cards with category labels and descriptions.
- * Use cases: service categories, product tiers, audience segments, case studies.
- * Inspired by Scale AI Public Sector / Enterprise cards (image-14).
+ * SECTION DOCUMENTATION
+ * ─────────────────────
+ * Primary Use Case: Audience segments / service paths — two distinct experiences side by side
+ * Best Funnel Position: Mid (after feature details)
+ * Why This Section Works: Two large cards with visual areas create strong visual distinction
+ *   between paths. Labels + descriptions help sellers self-identify which path fits them.
+ * Alternative Usage: Could present product tiers, case study categories, or engagement models.
  */
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -10,14 +14,14 @@ import { ArrowRight } from "lucide-react";
 
 const cards = [
   {
-    label: "[Category A]",
-    title: "[Card headline for the first category or offering]",
-    desc: "[Description that explains what this category covers and who it's for.]",
+    label: "Traditional Listing",
+    title: "Sell on the Open Market with Full Support",
+    desc: "Get three independent price opinions, ROI-focused prep, and a dedicated concierge team managing your listing from start to close.",
   },
   {
-    label: "[Category B]",
-    title: "[Card headline for the second category or offering]",
-    desc: "[Description that explains what this category covers and who it's for.]",
+    label: "Cash Offer Path",
+    title: "Get a Competitive Offer Without the Wait",
+    desc: "If speed or simplicity matters more, Nestla routes you to vetted cash buyers — with full transparency on your options.",
   },
 ];
 
@@ -31,13 +35,13 @@ export default function CardShowcase() {
       >
         <div className="mx-auto max-w-3xl text-center mb-16">
           <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
-            [Section label]
+            Two Paths, One Mission
           </p>
           <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-            [Section headline goes here]
+            Choose the Selling Experience That Fits You
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-            [Supporting text that clarifies the value of this section.]
+            Not every seller needs the same solution. Nestla helps you find the right path based on your goals, timeline, and priorities.
           </p>
         </div>
 
@@ -47,14 +51,12 @@ export default function CardShowcase() {
               key={i}
               className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card/50 transition-all duration-300 hover:border-primary/30"
             >
-              {/* Visual placeholder area */}
               <div className="relative h-52 bg-gradient-to-br from-secondary to-card">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-xs text-muted-foreground">[Visual placeholder]</span>
                 </div>
               </div>
 
-              {/* Text content */}
               <div className="flex flex-1 flex-col gap-4 p-8">
                 <p className="text-xs font-semibold uppercase tracking-widest text-primary">
                   {card.label}
@@ -63,7 +65,7 @@ export default function CardShowcase() {
                 <p className="text-sm leading-relaxed text-muted-foreground">{card.desc}</p>
                 <div className="mt-auto pt-4">
                   <Button variant="ghost" className="group/btn px-0 text-primary hover:text-primary">
-                    [Learn more]
+                    Learn More
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                   </Button>
                 </div>

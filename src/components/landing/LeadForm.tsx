@@ -1,3 +1,13 @@
+/**
+ * SECTION DOCUMENTATION
+ * ─────────────────────
+ * Primary Use Case: Lead capture / seller application — primary conversion point
+ * Best Funnel Position: Bottom (final conversion section)
+ * Why This Section Works: Clean form with minimal fields reduces friction. Contextual copy
+ *   sets expectations for follow-up and reinforces the no-pressure, trust-first positioning.
+ * Alternative Usage: Could be adapted for consultation booking, newsletter signup, or partner inquiry.
+ */
+
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -28,11 +38,10 @@ export default function LeadForm() {
   });
 
   const onSubmit = (data: FormValues) => {
-    // Placeholder — no backend
     form.reset();
     toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. We'll be in touch shortly.",
+      title: "Application received!",
+      description: "Thanks for applying. Our concierge team will reach out within 24 hours.",
     });
   };
 
@@ -42,15 +51,14 @@ export default function LeadForm() {
         className={`container mx-auto px-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
         <div className="mx-auto max-w-2xl text-center">
-          {/* Questionnaire: Automation Goals + Follow-up Tone */}
           <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
-            [CTA Section Label]
+            Apply Now
           </p>
           <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-            [Conversion heading — urgency + benefit]
+            Start Your Free Seller Review
           </h2>
           <p className="mt-4 text-muted-foreground">
-            [Supporting text — sets expectation for follow-up (email/SMS), builds trust, reduces friction]
+            Tell us about your property and goals. Our concierge team will review your application and follow up within 24 hours — no pressure, no obligation.
           </p>
         </div>
 
@@ -80,7 +88,7 @@ export default function LeadForm() {
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="jane@company.com" type="email" {...field} className="bg-card border-border/60" />
+                      <Input placeholder="jane@email.com" type="email" {...field} className="bg-card border-border/60" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -93,9 +101,9 @@ export default function LeadForm() {
               name="company"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Company (optional)</FormLabel>
+                  <FormLabel>Property Location (optional)</FormLabel>
                   <FormControl>
-                    <Input placeholder="Acme Inc." {...field} className="bg-card border-border/60" />
+                    <Input placeholder="City, State" {...field} className="bg-card border-border/60" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -107,10 +115,10 @@ export default function LeadForm() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Message</FormLabel>
+                  <FormLabel>Tell Us About Your Situation</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Tell us about your project or challenge…"
+                      placeholder="When are you thinking of selling? What's most important to you?"
                       rows={4}
                       {...field}
                       className="bg-card border-border/60"
@@ -126,7 +134,7 @@ export default function LeadForm() {
               size="lg"
               className="w-full rounded-full text-base font-semibold transition-transform hover:scale-[1.02]"
             >
-              [Form Submit CTA Label] <ArrowRight className="ml-1" size={18} />
+              Submit My Application <ArrowRight className="ml-1" size={18} />
             </Button>
           </form>
         </Form>

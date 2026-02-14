@@ -1,22 +1,31 @@
+/**
+ * SECTION DOCUMENTATION
+ * ─────────────────────
+ * Primary Use Case: Value proposition — outcome-driven benefits mapped to seller pain points
+ * Best Funnel Position: Mid (after about, before services)
+ * Why This Section Works: 3-column icon cards create scannable value hierarchy. Each card
+ *   addresses a specific pain point (overwhelm, trust, speed) and reframes it as a positive outcome.
+ * Alternative Usage: Could present differentiators, guarantees, or competitive advantages.
+ */
+
 import { TrendingUp, Shield, Zap } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-// Questionnaire: Key Benefits to Highlight → 3 core benefits
 const benefits = [
   {
     icon: TrendingUp,
-    title: "[Benefit #1 Title]",
-    desc: "[Benefit #1 description — maps to a primary audience pain point and decision driver]",
+    title: "Maximize Your Sale Price",
+    desc: "ROI-focused preparation and three independent price opinions ensure you list at the strongest possible number.",
   },
   {
     icon: Shield,
-    title: "[Benefit #2 Title]",
-    desc: "[Benefit #2 description — addresses trust, risk, or reliability concern]",
+    title: "Trust-First Transparency",
+    desc: "No pressure, no hidden agendas. Every recommendation is backed by data and delivered with honesty.",
   },
   {
     icon: Zap,
-    title: "[Benefit #3 Title]",
-    desc: "[Benefit #3 description — highlights efficiency, speed, or competitive edge]",
+    title: "Fast, Responsive Support",
+    desc: "Concierge-level communication means you're never left waiting. Your questions get answered, your timeline gets respected.",
   },
 ];
 
@@ -28,10 +37,9 @@ export default function Benefits() {
       <div
         className={`container mx-auto px-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
-        {/* Questionnaire: Brand Values & Competitive Differentiation */}
-        <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">[Section Label from Brand Values]</p>
+        <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">Why Nestla</p>
         <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-          [Value proposition heading — why choose this brand]
+          The Outcomes That Matter Most
         </h2>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">

@@ -1,16 +1,20 @@
 /**
- * PeopleGrid — 3-column portrait card grid with name, role, and social links.
- * Use cases: team members, leadership, advisors, partners, contributors, board members.
- * Inspired by DevSavant team section (image-24).
+ * SECTION DOCUMENTATION
+ * ─────────────────────
+ * Primary Use Case: Team / leadership — humanizes the brand with real faces and roles
+ * Best Funnel Position: Mid-to-Late (after process, before testimonials)
+ * Why This Section Works: Portrait cards with roles and contact links build personal trust.
+ *   Showing real people behind the concierge model reinforces the "human care" positioning.
+ * Alternative Usage: Could present advisors, partner agents, board members, or client advocates.
  */
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Mail, Linkedin } from "lucide-react";
 
 const people = [
-  { name: "[Person name #1]", role: "[Role or title]" },
-  { name: "[Person name #2]", role: "[Role or title]" },
-  { name: "[Person name #3]", role: "[Role or title]" },
+  { name: "Sarah Mitchell", role: "Head of Concierge" },
+  { name: "David Chen", role: "Pricing Strategy Lead" },
+  { name: "Maria Torres", role: "Client Experience" },
 ];
 
 export default function PeopleGrid() {
@@ -23,10 +27,10 @@ export default function PeopleGrid() {
       >
         <div className="mx-auto max-w-3xl text-center mb-16">
           <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
-            [Section label]
+            Your Team
           </p>
           <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-            [Section headline goes here]
+            The People Behind Your Sale
           </h2>
         </div>
 
@@ -37,7 +41,6 @@ export default function PeopleGrid() {
               className="group flex flex-col"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              {/* Photo placeholder */}
               <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-border bg-card/40">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-card/80" />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -45,7 +48,6 @@ export default function PeopleGrid() {
                 </div>
               </div>
 
-              {/* Info */}
               <div className="mt-5 flex items-baseline justify-between">
                 <h3 className="font-heading text-xl font-bold">{person.name}</h3>
                 <span className="text-sm text-primary">+ {person.role}</span>

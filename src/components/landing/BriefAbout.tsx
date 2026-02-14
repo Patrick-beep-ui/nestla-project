@@ -1,26 +1,36 @@
+/**
+ * SECTION DOCUMENTATION
+ * ─────────────────────
+ * Primary Use Case: Company overview / mission positioning — who we are + core competencies
+ * Best Funnel Position: Top-to-Mid (after trust bar, before services)
+ * Why This Section Works: Centered heading builds authority; 2×2 pillar grid breaks down the
+ *   company's approach into scannable competency blocks. Balances mission with proof.
+ * Alternative Usage: Could be reframed for partner onboarding, investor pitch, or "Why Nestla" positioning.
+ */
+
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Target, Users, Lightbulb, Award } from "lucide-react";
 
 const pillars = [
   {
     icon: Target,
-    title: "[Core Competency #1]",
-    desc: "[What you do — primary capability or methodology]",
+    title: "Concierge-Led Guidance",
+    desc: "A dedicated team manages every step — from pricing strategy to closing — so you never feel lost or pressured.",
   },
   {
     icon: Users,
-    title: "[Core Competency #2]",
-    desc: "[Who you serve — target audience and their context]",
+    title: "Built for Homeowners",
+    desc: "We serve sellers planning to list in the next 0–12 months who want clarity, transparency, and a stronger outcome.",
   },
   {
     icon: Lightbulb,
-    title: "[Core Competency #3]",
-    desc: "[Why you exist — mission-driven purpose or founding insight]",
+    title: "Smart Systems, Human Care",
+    desc: "Nestla combines intelligent routing and preparation tools with empathetic, hands-on support at every stage.",
   },
   {
     icon: Award,
-    title: "[Core Competency #4]",
-    desc: "[Why trust you — credibility signal, track record, or differentiator]",
+    title: "Three Independent Opinions",
+    desc: "Every seller receives pricing from three licensed realtors — eliminating guesswork and building confidence in your asking price.",
   },
 ];
 
@@ -32,20 +42,18 @@ export default function BriefAbout() {
       <div
         className={`container mx-auto px-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
-        {/* Centered heading block inspired by Scale AI "How Scale Delivers Value" */}
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
-            [About Section Label — e.g. "Who We Are"]
+            Who We Are
           </p>
           <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-            [Company mission headline — why this company exists]
+            Selling Should Feel Clear, Calm, and Trustworthy
           </h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-            [2–3 sentence company overview — what you do, who it's for, and the outcome you deliver. Mission-driven, credibility-focused. Maps to Business Vision & Mission from questionnaire.]
+            Nestla is a seller concierge platform that guides homeowners through every decision — from pricing to preparation to closing. Our mission is to become the most trusted name in real estate by combining human care with smart systems.
           </p>
         </div>
 
-        {/* 2x2 pillar grid inspired by Scale AI's value delivery layout */}
         <div className="mt-16 grid gap-8 md:grid-cols-2">
           {pillars.map((p, i) => (
             <div

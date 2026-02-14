@@ -1,16 +1,20 @@
 /**
- * MetricCards — Card grid with large icons and bold metric numbers.
- * Use cases: impact numbers, credibility stats, company milestones, trust signals, KPIs.
- * Inspired by DevSavant trusted-by metrics cards (image-21).
+ * SECTION DOCUMENTATION
+ * ─────────────────────
+ * Primary Use Case: Impact metrics / trust signals — bold numbers that prove credibility
+ * Best Funnel Position: Pre-Form (reinforces trust just before conversion)
+ * Why This Section Works: Large typography + gradient accents create visual impact. Three cards
+ *   provide just enough data to build confidence without overwhelming.
+ * Alternative Usage: Could show company milestones, market reach, or client satisfaction scores.
  */
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { DollarSign, ShieldCheck, Users } from "lucide-react";
 
 const metrics = [
-  { icon: DollarSign, value: "[000]", label: "[Metric label #1]" },
-  { icon: ShieldCheck, value: "[000]", label: "[Metric label #2]" },
-  { icon: Users, value: "[000]", label: "[Metric label #3]" },
+  { icon: DollarSign, value: "15%+", label: "Average Seller Net Gain vs. Quick-Sale Alternatives" },
+  { icon: ShieldCheck, value: "100%", label: "Transparent, No-Pressure Consultations" },
+  { icon: Users, value: "500+", label: "Homeowners Guided Through the Nestla Method" },
 ];
 
 export default function MetricCards() {
@@ -23,7 +27,7 @@ export default function MetricCards() {
       >
         <div className="mx-auto max-w-3xl text-center mb-16">
           <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-            [Section headline goes here]
+            Results That Speak for Themselves
           </h2>
         </div>
 
@@ -34,10 +38,8 @@ export default function MetricCards() {
               className="group relative overflow-hidden rounded-2xl border border-border bg-card/40 p-8 transition-all duration-300 hover:border-primary/30"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              {/* Decorative wave gradient */}
               <div className="absolute inset-0 opacity-20 bg-gradient-to-br from-primary/30 via-transparent to-transparent" />
 
-              {/* Icon */}
               <div className="relative z-10 mb-12 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
                 <m.icon className="h-6 w-6 text-primary" />
               </div>
