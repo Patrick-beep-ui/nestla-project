@@ -17,6 +17,8 @@ import Testimonials from "@/components/landing/Testimonials";
 import FinalCta from "@/components/landing/FinalCta";
 import LeadForm from "@/components/landing/LeadForm";
 import Footer from "@/components/landing/Footer";
+import ProjectGallery from "@/components/landing/ProjectGallery";
+import FounderSection from "@/components/landing/FounderSection";
 
 const Index = () => (
   <div className="min-h-screen bg-background text-foreground">
@@ -33,7 +35,9 @@ const Index = () => (
       <CardShowcase />
       <ValueStack />
       <NumberedCards />
+      <ProjectGallery />
       <PeopleGrid />
+      <FounderSection />
       <MetricCards />
       <CtaDownload />
       <Testimonials />
