@@ -18,6 +18,7 @@ import FinalCta from "@/components/landing/FinalCta";
 import LeadForm from "@/components/landing/LeadForm";
 import Footer from "@/components/landing/Footer";
 import ProjectGallery from "@/components/landing/ProjectGallery";
+import ProjectGallerySlider from "@/components/landing/ProjectGallerySlider";
 import FounderSection from "@/components/landing/FounderSection";
 
 const Index = () => (
@@ -36,6 +37,7 @@ const Index = () => (
       <ValueStack />
       <NumberedCards />
       <ProjectGallery />
+      <ProjectGallerySlider />
       <PeopleGrid />
       <FounderSection />
       <MetricCards />
