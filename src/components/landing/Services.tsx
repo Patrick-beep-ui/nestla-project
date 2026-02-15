@@ -9,6 +9,8 @@
  */
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import sectionExterior from "@/assets/section-exterior-1.jpg";
+import sectionInterior from "@/assets/section-interior-1.jpg";
 
 const services = [
   {
@@ -16,12 +18,14 @@ const services = [
     title: "Flat-Fee Seller Review",
     desc: "Apply for a free consultation that includes three independent price opinions, a personalized prep plan, and full listing coordination — all for a transparent flat fee.",
     gradient: "from-primary/20 to-accent/10",
+    image: sectionExterior,
   },
   {
     label: "Best-Fit Routing",
     title: "Your Path, Your Terms",
     desc: "Whether a traditional realtor experience or a competitive cash offer fits better, Nestla routes you to the right path — no pressure, just guidance based on your goals.",
     gradient: "from-accent/20 to-primary/10",
+    image: sectionInterior,
   },
 ];
 
@@ -42,18 +46,29 @@ export default function Services() {
           {services.map((s) => (
             <div
               key={s.title}
-              className="relative overflow-hidden rounded-2xl border border-border/60 bg-card p-10 transition-all duration-300 hover:border-primary/40"
+              className="relative overflow-hidden rounded-2xl border border-border/60 bg-card transition-all duration-300 hover:border-primary/40"
             >
-              <div
-                className={`pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-gradient-to-br ${s.gradient} blur-3xl opacity-60`}
-              />
-              <span className="relative mb-4 inline-block rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
-                {s.label}
-              </span>
-              <h3 className="relative font-heading text-2xl font-bold md:text-3xl">{s.title}</h3>
-              <p className="relative mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-                {s.desc}
-              </p>
+              {/* Optional supporting image */}
+              <div className="h-40 overflow-hidden">
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="relative p-10">
+                <div
+                  className={`pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-gradient-to-br ${s.gradient} blur-3xl opacity-60`}
+                />
+                <span className="relative mb-4 inline-block rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                  {s.label}
+                </span>
+                <h3 className="relative font-heading text-2xl font-bold md:text-3xl">{s.title}</h3>
+                <p className="relative mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
+                  {s.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>

@@ -10,6 +10,7 @@
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Target, Users, Lightbulb, Award } from "lucide-react";
+import sectionInterior from "@/assets/section-interior-1.jpg";
 
 const pillars = [
   {
@@ -52,6 +53,16 @@ export default function BriefAbout() {
           <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
             Nestla is a seller concierge platform that guides homeowners through every decision — from pricing to preparation to closing. Our mission is to become the most trusted name in real estate by combining human care with smart systems.
           </p>
+        </div>
+
+        {/* Optional supporting image */}
+        <div className="mt-12 overflow-hidden rounded-2xl border border-border/40">
+          <img
+            src={sectionInterior}
+            alt="Bright modern home interior"
+            className="w-full h-56 md:h-72 object-cover"
+            loading="lazy"
+          />
         </div>
 
         <div className="mt-16 grid gap-8 md:grid-cols-2">

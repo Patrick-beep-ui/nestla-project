@@ -11,6 +11,7 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import sectionInterior from "@/assets/section-interior-1.jpg";
 
 export default function SplitSection() {
   const { ref, isVisible } = useScrollReveal();
@@ -21,12 +22,14 @@ export default function SplitSection() {
         className={`container mx-auto px-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-          {/* Visual placeholder */}
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-card border border-border">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/10" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-sm text-muted-foreground">[Visual / image placeholder]</span>
-            </div>
+          {/* Visual */}
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border/40">
+            <img
+              src={sectionInterior}
+              alt="Modern home interior"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
           </div>
 
           {/* Text content */}
