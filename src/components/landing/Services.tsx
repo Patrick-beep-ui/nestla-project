@@ -9,28 +9,43 @@
  */
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import sectionExterior from "@/assets/section-exterior-1.jpg";
-import sectionInterior from "@/assets/section-interior-1.jpg";
 
 const services = [
   {
     label: "The Nestla Method",
     title: "Flat-Fee Seller Review",
-    desc: "Apply for a free consultation that includes three independent price opinions, a personalized prep plan, and full listing coordination — all for a transparent flat fee.",
+    desc: "Begin with a complimentary seller review designed to remove uncertainty. Approved homeowners receive three independent price opinions, a personalized Prep & Improve roadmap, and full listing coordination — all delivered through a transparent flat-fee structure.",
     gradient: "from-primary/20 to-accent/10",
-    image: sectionExterior,
+    image: "/images/nestla-mid-century-modern-stucco-exterior.webp",
+    micro: [
+      "Three independent licensed realtor price opinions",
+      "ROI-focused prep guidance through Nestla Touch",
+      "Concierge-level communication through close",
+    ],
+    cta: "Start Your Seller Review",
   },
   {
     label: "Best-Fit Routing",
     title: "Your Path, Your Terms",
-    desc: "Whether a traditional realtor experience or a competitive cash offer fits better, Nestla routes you to the right path — no pressure, just guidance based on your goals.",
+    desc: "Not every seller needs the same strategy. If a traditional in-person agent or a competitive cash offer better fits your timeline or goals, we guide you there thoughtfully — so you never feel pressured into the wrong path.",
     gradient: "from-accent/20 to-primary/10",
-    image: sectionInterior,
+    image: "/images/nestla-bright-kitchen-dining-roi-refresh.webp",
+    micro: [
+      "Traditional in-person realtor experience when preferred",
+      "Competitive cash offer options for speed and certainty",
+      "Guidance based on your goals — not commissions",
+    ],
+    cta: "Explore Your Options"
   },
 ];
 
+
 export default function Services() {
   const { ref, isVisible } = useScrollReveal();
+
+  const scrollTo = (href: string) => {
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section id="services" className="py-24 md:py-32" ref={ref}>
@@ -38,7 +53,7 @@ export default function Services() {
         className={`container mx-auto px-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
         <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">What We Offer</p>
-        <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
+        <h2 className="font-heading text-4xl font-semibold tracking-[-0.02em] leading-[1.1] md:text-5xl">
           A Smarter Way to Sell Your Home
         </h2>
 
@@ -49,7 +64,7 @@ export default function Services() {
               className="relative overflow-hidden rounded-2xl border border-border/60 bg-card transition-all duration-300 hover:border-primary/40"
             >
               {/* Optional supporting image */}
-              <div className="h-40 overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={s.image}
                   alt={s.title}
@@ -68,6 +83,39 @@ export default function Services() {
                 <p className="relative mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
                   {s.desc}
                 </p>
+
+                {s.micro && s.micro.length > 0 && (
+                  <ul className="relative mt-5 space-y-3 text-sm text-muted-foreground">
+                    {s.micro.map((item, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <svg
+                          className="mt-[3px] h-4 w-4 shrink-0 text-primary"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                        >
+                          <path d="M5 10l3 3 7-7" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {s.cta && (
+                  <a
+                    href="#apply"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollTo("#contact");
+                    }}
+                    className="relative mt-10 inline-flex items-center text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                  >
+                    {s.cta} →
+                  </a>
+                )}
+
               </div>
             </div>
           ))}

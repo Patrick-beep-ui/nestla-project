@@ -9,6 +9,7 @@ import StatsBar from "@/components/landing/StatsBar";
 import FeatureGrid from "@/components/landing/FeatureGrid";
 import CardShowcase from "@/components/landing/CardShowcase";
 import ValueStack from "@/components/landing/ValueStack";
+import ComparisonTable from "@/components/landing/ComparisonTable";
 import NumberedCards from "@/components/landing/NumberedCards";
 import PeopleGrid from "@/components/landing/PeopleGrid";
 import MetricCards from "@/components/landing/MetricCards";
@@ -20,31 +21,36 @@ import Footer from "@/components/landing/Footer";
 import ProjectGallery from "@/components/landing/ProjectGallery";
 import ProjectGallerySlider from "@/components/landing/ProjectGallerySlider";
 import FounderSection from "@/components/landing/FounderSection";
+import LeadFormGHL from "@/components/landing/LeadFormGHL";
 
 const Index = () => (
   <div className="min-h-screen bg-background text-foreground">
     <Navbar />
     <main>
       <Hero />
-      <TrustBar />
       <BriefAbout />
-      <Benefits />
+      <StatsBar />
       <Services />
       <SplitSection />
-      <StatsBar />
       <FeatureGrid />
-      <CardShowcase />
-      <ValueStack />
+      <ComparisonTable />
       <NumberedCards />
       <ProjectGallery />
-      <ProjectGallerySlider />
-      <PeopleGrid />
       <FounderSection />
-      <MetricCards />
-      <CtaDownload />
-      <Testimonials />
-      <FinalCta />
-      <LeadForm />
+      <LeadFormGHL />
+
+      {/*<TrustBar />*/}
+      {/*<Benefits />*/}
+      {/*<CardShowcase />*/}
+      {/*<ValueStack />*/}
+      {/*<ProjectGallerySlider />*/}
+      {/*<PeopleGrid />*/}
+      {/*<MetricCards />*/}
+      {/*<CtaDownload />*/}
+      {/*<Testimonials />*/}
+      {/*<FinalCta />*/}
+      {/*<LeadForm />*/}
+     
     </main>
     <Footer />
   </div>
