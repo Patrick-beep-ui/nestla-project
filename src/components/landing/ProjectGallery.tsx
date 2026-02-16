@@ -8,7 +8,8 @@
  * Alternative Usage: Could present case studies, project types, neighborhood coverage, or partner work.
  */
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
+import { X } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import images from "./../../data/images.json";
 
@@ -32,6 +33,11 @@ const ITEMS_PER_PAGE = 6;
 export default function ProjectGallery() {
   const { ref, isVisible } = useScrollReveal();
   const [page, setPage] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<any | null>(null);
+  const [displayPage, setDisplayPage] = useState(page);
+  const [isFading, setIsFading] = useState(false);
+  
+
 
   const projects = useMemo(() => {
     return selectedImages
@@ -48,16 +54,33 @@ export default function ProjectGallery() {
   const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
 
   const paginatedProjects = projects.slice(
-    page * ITEMS_PER_PAGE,
-    page * ITEMS_PER_PAGE + ITEMS_PER_PAGE
+    displayPage  * ITEMS_PER_PAGE,
+    displayPage  * ITEMS_PER_PAGE + ITEMS_PER_PAGE
   );
 
   const goToPage = (index: number) => {
-    if (index >= 0 && index < totalPages) {
-      setPage(index);
-      window.scrollTo({ top: ref.current?.offsetTop - 100, behavior: "smooth" });
+    if (index >= 0 && index < totalPages && index !== page) {
+      setIsFading(true);
+  
+      setTimeout(() => {
+        setDisplayPage(index);
+        setPage(index);
+        setIsFading(false);
+      }, 300);
     }
   };
+  
+  
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedImage(null);
+    };
+  
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+  
 
   return (
     <section className="py-24 md:py-32 bg-background" ref={ref}>
@@ -84,11 +107,18 @@ export default function ProjectGallery() {
         </div>
 
         {/* 3x2 Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div
+          className={`grid gap-6 sm:grid-cols-2 lg:grid-cols-3 transition-opacity duration-500 ease-in-out
+ ${
+            isFading ? "opacity-0" : "opacity-100"
+          }`}
+        >
+
           {paginatedProjects.map((project, i) => (
             <div
               key={project.optimized_seo_name}
-              className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#161616]/40 backdrop-blur-xl"
+              onClick={() => setSelectedImage(project)}
+              className="group relative cursor-pointer overflow-hidden rounded-2xl border border-white/5 bg-[#161616]/40 backdrop-blur-xl"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               <div className="aspect-[4/3] overflow-hidden">
@@ -152,6 +182,33 @@ export default function ProjectGallery() {
           </div>
         )}
       </div>
+
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-6"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div
+            className="relative max-h-[90vh] max-w-[1200px] w-full animate-in fade-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={`/images/${selectedImage.optimized_seo_name}`}
+              alt={selectedImage.recommended_alt_text}
+              className="w-full h-full object-contain rounded-2xl"
+            />
+
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-4 -right-4 rounded-full bg-white/10 p-2 text-white backdrop-blur hover:bg-white/20 transition"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+        </div>
+      )}
+
     </section>
   );
 }

@@ -29,21 +29,23 @@ const Index = () => (
       <Hero />
       {/*<TrustBar />*/}
       <BriefAbout />
-      <Services />
-      <Benefits />
       <StatsBar />
+      <Services />
       <SplitSection />
       <FeatureGrid />
-      {/*<CardShowcase />*/}
-      <ValueStack />
       <ComparisonTable />
       <NumberedCards />
       <ProjectGallery />
+      <FounderSection />
+      
+
+      {/*<Benefits />*/}
+      {/*<CardShowcase />*/}
+      {/*<ValueStack />*/}
       {/*<ProjectGallerySlider />*/}
       {/*<PeopleGrid />*/}
-      <FounderSection />
       {/*<MetricCards />*/}
-      <CtaDownload />
+      {/*<CtaDownload />*/}
       {/*<Testimonials />*/}
       {/*<FinalCta />*/}
       <LeadForm />

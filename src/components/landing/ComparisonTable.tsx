@@ -9,20 +9,20 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const comparisonData = [
   { 
     feature: "Pricing Strategy", 
-    nestla: "3 Independent Licensed Opinions", 
+    nestla: "Equity Protection via 3 Licensed Valuations", 
     traditional: "Single Agent 'Gut Feeling'",
     highlight: true 
   },
   { 
-    feature: "Pre-Listing Prep", 
-    nestla: "Nestla Touch ROI Roadmap", 
+    feature: "Pre-Sale Preparation", 
+    nestla: "Maximized Net Proceeds Strategy", 
     traditional: "Basic 'Clean & Declutter'",
     highlight: true 
   },
   { 
     feature: "Communication", 
     nestla: "Dedicated 24h Concierge Team", 
-    traditional: "Single Agent (Variable)",
+    traditional: "Variable Agent Availability",
     highlight: false 
   },
   { 
@@ -32,8 +32,8 @@ const comparisonData = [
     highlight: true 
   },
   { 
-    feature: "Seller Net Return", 
-    nestla: "Maximized via Strategic Prep", 
+    feature: "Final Outcome", 
+    nestla: "Optimized Seller Equity", 
     traditional: "Standard Market Average",
     highlight: true 
   },

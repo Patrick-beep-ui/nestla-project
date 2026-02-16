@@ -11,7 +11,7 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const stats = [
-  { value: "3", label: "Independent Price Opinions" },
+  { value: "3", label: "Licensed Valuations" },
   { value: "100%", label: "Seller-First Focus" },
   { value: "$0", label: "Upfront Consultation Cost" },
   { value: "12mo", label: "Flexible Selling Timeline" },

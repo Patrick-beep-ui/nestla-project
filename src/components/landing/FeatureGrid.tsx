@@ -19,18 +19,18 @@ import { Layers, Zap, Shield, Globe, BarChart3, Sparkles } from "lucide-react";
 const items = [
   { 
     icon: Layers, 
-    title: "Independent Valuation", 
-    desc: "Receive three price opinions from licensed realtors to ensure total confidence in your asking price." 
+    title: "Unbiased Market Positioning", 
+    desc: "Three independent licensed valuations ensure your home enters the market with precision, not guesswork." 
   },
   { 
     icon: Sparkles, 
-    title: "ROI-Focused Prep", 
-    desc: "Strategic staging and Nestla Touch improvements designed to maximize your net return at closing." 
+    title: "The Nestla Touch Roadmap", 
+    desc: "A curated, ROI-driven preparation strategy engineered to elevate perception and maximize net proceeds." 
   },
   { 
     icon: Zap, 
     title: "Concierge Coordination", 
-    desc: "From photography to negotiations, your dedicated team handles every detail with 24h responsive support." 
+    desc: "A single point of contact coordinating every detail — with disciplined 24-hour response standards." 
   },
   { 
     icon: Shield, 
