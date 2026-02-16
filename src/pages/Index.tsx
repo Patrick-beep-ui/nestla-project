@@ -21,13 +21,13 @@ import Footer from "@/components/landing/Footer";
 import ProjectGallery from "@/components/landing/ProjectGallery";
 import ProjectGallerySlider from "@/components/landing/ProjectGallerySlider";
 import FounderSection from "@/components/landing/FounderSection";
+import LeadFormGHL from "@/components/landing/LeadFormGHL";
 
 const Index = () => (
   <div className="min-h-screen bg-background text-foreground">
     <Navbar />
     <main>
       <Hero />
-      {/*<TrustBar />*/}
       <BriefAbout />
       <StatsBar />
       <Services />
@@ -37,8 +37,9 @@ const Index = () => (
       <NumberedCards />
       <ProjectGallery />
       <FounderSection />
-      
+      <LeadFormGHL />
 
+      {/*<TrustBar />*/}
       {/*<Benefits />*/}
       {/*<CardShowcase />*/}
       {/*<ValueStack />*/}
@@ -48,7 +49,8 @@ const Index = () => (
       {/*<CtaDownload />*/}
       {/*<Testimonials />*/}
       {/*<FinalCta />*/}
-      <LeadForm />
+      {/*<LeadForm />*/}
+     
     </main>
     <Footer />
   </div>

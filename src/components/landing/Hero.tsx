@@ -57,7 +57,7 @@ export default function Hero() {
               Apply for a Free Seller Review <ArrowRight className="ml-1" size={18} />
             </Button>
             <button
-              onClick={() => scrollTo("#benefits")}
+              onClick={() => scrollTo("#about")}
               className="text-sm font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
             >
               See How It Works ↓

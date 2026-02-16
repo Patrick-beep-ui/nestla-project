@@ -83,7 +83,7 @@ export default function ProjectGallery() {
   
 
   return (
-    <section className="py-24 md:py-32 bg-background" ref={ref}>
+    <section className="py-24 md:py-32 bg-background" ref={ref} id="projects">
       <div
         className={`container mx-auto px-6 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
