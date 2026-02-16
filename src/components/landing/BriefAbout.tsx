@@ -39,45 +39,64 @@ export default function BriefAbout() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="about" className="py-24 md:py-32" ref={ref}>
+    <section
+      id="about"
+      className="relative py-24 md:py-32 overflow-hidden"
+      ref={ref}
+    >
+      {/* Subtle architectural background accent */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <img
+          src={sectionInterior}
+          alt=""
+          className="h-full w-full object-cover opacity-[0.04]"
+        />
+      </div>
+
       <div
-        className={`container mx-auto px-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        className={`container mx-auto px-6 transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
       >
+        {/* Heading Block */}
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
             Who We Are
           </p>
-          <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
-            Selling Should Feel Clear, Calm, and Trustworthy
+
+          <h2 className="font-heading text-4xl font-semibold tracking-[-0.02em] leading-[1.1] md:text-5xl">
+            A Structured, Concierge-Led Selling Experience
           </h2>
+
           <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-            Nestla is a seller concierge platform that guides homeowners through every decision — from pricing to preparation to closing. Our mission is to become the most trusted name in real estate by combining human care with smart systems.
+            Nestla is a seller concierge firm guiding homeowners through every
+            decision — from pricing to preparation to closing. Our mission is
+            to become the most trusted name in real estate by combining human
+            care with smart systems.
           </p>
         </div>
 
-        {/* Optional supporting image */}
-        <div className="mt-12 overflow-hidden rounded-2xl border border-border/40">
-          <img
-            src={sectionInterior}
-            alt="Bright modern home interior"
-            className="w-full h-56 md:h-72 object-cover"
-            loading="lazy"
-          />
-        </div>
-
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
+        {/* Pillar Grid */}
+        <div className="mt-20 grid gap-8 md:grid-cols-2">
           {pillars.map((p, i) => (
             <div
               key={p.title}
-              className="flex gap-5 rounded-xl p-6 transition-all duration-300 hover:bg-card/60"
+              className="group relative flex gap-6 rounded-2xl border border-border/40 bg-card/30 p-7 transition-all duration-300 hover:border-primary/30 hover:bg-card/60"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                <p.icon className="h-6 w-6 text-primary" />
+              {/* Elevated Icon Container */}
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 shadow-[0_4px_20px_rgba(99,199,255,0.15)] backdrop-blur-sm">
+                <p.icon
+                  className="h-6 w-6 text-primary"
+                  strokeWidth={1.6}
+                />
               </div>
+
               <div>
-                <h3 className="font-heading text-lg font-bold">{p.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                <h3 className="font-heading text-lg font-bold">
+                  {p.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {p.desc}
                 </p>
               </div>

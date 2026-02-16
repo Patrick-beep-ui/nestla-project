@@ -8,111 +8,151 @@
  * Alternative Usage: Could present case studies, project types, neighborhood coverage, or partner work.
  */
 
+import { useMemo, useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import home1 from "@/assets/gallery/home-1.jpg";
-import home2 from "@/assets/gallery/home-2.jpg";
-import home3 from "@/assets/gallery/home-3.jpg";
-import home4 from "@/assets/gallery/home-4.jpg";
-import home5 from "@/assets/gallery/home-5.jpg";
-import home6 from "@/assets/gallery/home-6.jpg";
+import images from "./../../data/images.json";
 
-const projects = [
-  {
-    image: home1,
-    location: "Austin, TX",
-    outcome: "Sold Above Asking",
-    tag: "Nestla Method",
-  },
-  {
-    image: home2,
-    location: "Denver, CO",
-    outcome: "Staged & Sold in 11 Days",
-    tag: "Nestla Touch",
-  },
-  {
-    image: home3,
-    location: "Nashville, TN",
-    outcome: "Strategically Priced & Sold in 9 Days",
-    tag: "Nestla Method",
-  },
-  {
-    image: home4,
-    location: "Portland, OR",
-    outcome: "Full Prep, Maximum Return",
-    tag: "Nestla Touch",
-  },
-  {
-    image: home5,
-    location: "Charlotte, NC",
-    outcome: "Sold Above Asking",
-    tag: "Nestla Method",
-  },
-  {
-    image: home6,
-    location: "Scottsdale, AZ",
-    outcome: "Concierge-Led Sale",
-    tag: "Nestla Method",
-  },
+const selectedImages = [
+  "nestla-industrial-modern-kitchen-walnut-finish.webp",
+  "nestla-custom-blue-cabinetry-living-room-design.webp",
+  "nestla-scandinavian-kitchen-wood-cabinetry.webp",
+  "nestla-white-oak-kitchen-wicker-lighting.webp",
+  "nestla-open-concept-living-luxury-lighting.webp",
+  "luxury-craftsman-home-prep-nestla-listing.webp",
+  "nestla-luxury-kitchen-marble-waterfall-island.webp",
+  "nestla-suburban-ranch-exterior-presale-prep.webp",
+  "nestla-modern-fire-pit-lounge-prep.webp",
+  "nestla-modern-dining-room-minimalist-styling.webp",
+  "nestla-grand-entryway-spiral-staircase.webp",
+  "nestla-spanish-revival-exterior-refresh.webp",
 ];
+
+const ITEMS_PER_PAGE = 6;
 
 export default function ProjectGallery() {
   const { ref, isVisible } = useScrollReveal();
+  const [page, setPage] = useState(0);
+
+  const projects = useMemo(() => {
+    return selectedImages
+      .map((name) =>
+        images.images.find(
+          (img) =>
+            img.original_name === name ||
+            img.optimized_seo_name === name
+        )
+      )
+      .filter(Boolean);
+  }, []);
+
+  const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
+
+  const paginatedProjects = projects.slice(
+    page * ITEMS_PER_PAGE,
+    page * ITEMS_PER_PAGE + ITEMS_PER_PAGE
+  );
+
+  const goToPage = (index: number) => {
+    if (index >= 0 && index < totalPages) {
+      setPage(index);
+      window.scrollTo({ top: ref.current?.offsetTop - 100, behavior: "smooth" });
+    }
+  };
 
   return (
     <section className="py-24 md:py-32 bg-background" ref={ref}>
       <div
-        className={`container mx-auto px-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+        className={`container mx-auto px-6 transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
       >
-        <div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        {/* Header */}
+        <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#63C7FF]">
               Our Work
             </p>
-            <h2 className="font-heading text-3xl font-extrabold tracking-tight md:text-5xl">
+            <h2 className="font-heading text-4xl font-semibold tracking-[-0.02em] leading-[1.1] text-white md:text-5xl">
               Homes We've Represented
             </h2>
           </div>
-          <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-            Every home receives the same concierge-level care — preparation, pricing, and guidance tailored to maximize your outcome.
+
+          <p className="max-w-md text-sm leading-relaxed text-gray-400">
+            Every home receives concierge-level preparation and strategic pricing —
+            engineered for maximum return.
           </p>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, i) => (
+        {/* 3x2 Grid */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {paginatedProjects.map((project, i) => (
             <div
-              key={i}
-              className="group relative overflow-hidden rounded-xl border border-border/40"
+              key={project.optimized_seo_name}
+              className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#161616]/40 backdrop-blur-xl"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
-                  src={project.image}
-                  alt={`Home in ${project.location}`}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  src={`/images/${project.optimized_seo_name}`}
+                  alt={project.recommended_alt_text}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
 
-              {/* Tag badge */}
-              <div className="absolute left-3 top-3">
-                <span className="rounded-full bg-background/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-primary border border-border/40">
-                  {project.tag}
-                </span>
-              </div>
-
-              {/* Info overlay at bottom */}
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 via-background/70 to-transparent p-5 pt-12">
-                <p className="text-sm font-semibold text-foreground">
-                  {project.location}
-                </p>
-                <p className="mt-0.5 text-xs text-muted-foreground">
-                  {project.outcome}
+              {/* Overlay */}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-5 pt-12">
+                <p className="text-sm font-semibold text-white">
+                {project.optimized_seo_name
+                    .replace("nestla-", "")
+                    .replace(/-/g, " ")
+                    .replace(".webp", "")}
                 </p>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="mt-12 flex flex-col items-center gap-6">
+            {/* Buttons */}
+            <div className="flex gap-4">
+              <button
+                onClick={() => goToPage(page - 1)}
+                disabled={page === 0}
+                className="rounded-full border border-white/10 px-5 py-2 text-sm text-gray-400 transition hover:border-[#63C7FF] hover:text-[#63C7FF] disabled:opacity-30"
+              >
+                ← Previous
+              </button>
+
+              <button
+                onClick={() => goToPage(page + 1)}
+                disabled={page === totalPages - 1}
+                className="rounded-full border border-white/10 px-5 py-2 text-sm text-gray-400 transition hover:border-[#63C7FF] hover:text-[#63C7FF] disabled:opacity-30"
+              >
+                Next →
+              </button>
+            </div>
+
+            {/* Dots */}
+            <div className="flex gap-3">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => goToPage(i)}
+                  className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
+                    page === i
+                      ? "bg-[#63C7FF] scale-125"
+                      : "bg-white/20 hover:bg-white/40"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
 }
+

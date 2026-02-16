@@ -9,6 +9,7 @@ import StatsBar from "@/components/landing/StatsBar";
 import FeatureGrid from "@/components/landing/FeatureGrid";
 import CardShowcase from "@/components/landing/CardShowcase";
 import ValueStack from "@/components/landing/ValueStack";
+import ComparisonTable from "@/components/landing/ComparisonTable";
 import NumberedCards from "@/components/landing/NumberedCards";
 import PeopleGrid from "@/components/landing/PeopleGrid";
 import MetricCards from "@/components/landing/MetricCards";
@@ -26,24 +27,25 @@ const Index = () => (
     <Navbar />
     <main>
       <Hero />
-      <TrustBar />
+      {/*<TrustBar />*/}
       <BriefAbout />
-      <Benefits />
       <Services />
-      <SplitSection />
+      <Benefits />
       <StatsBar />
+      <SplitSection />
       <FeatureGrid />
-      <CardShowcase />
+      {/*<CardShowcase />*/}
       <ValueStack />
+      <ComparisonTable />
       <NumberedCards />
       <ProjectGallery />
-      <ProjectGallerySlider />
-      <PeopleGrid />
+      {/*<ProjectGallerySlider />*/}
+      {/*<PeopleGrid />*/}
       <FounderSection />
-      <MetricCards />
+      {/*<MetricCards />*/}
       <CtaDownload />
-      <Testimonials />
-      <FinalCta />
+      {/*<Testimonials />*/}
+      {/*<FinalCta />*/}
       <LeadForm />
     </main>
     <Footer />

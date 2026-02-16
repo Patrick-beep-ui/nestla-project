@@ -19,9 +19,22 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-lg">
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
-        <a href="#" className="font-heading text-xl font-bold tracking-tight text-foreground">
-          nestla
-        </a>
+      <a
+        href="#hero"
+        onClick={(e) => {
+          e.preventDefault();
+          scrollTo("#hero");
+        }}
+        className="flex items-center gap-2 font-heading text-xl font-bold tracking-tight text-foreground"
+      >
+        <img
+          src="/assets/NestlaLogo.svg"
+          alt="Nestla logo"
+          className="h-6 w-auto"
+        />
+        <span>Nestla</span>
+      </a>
+
 
         {/* Desktop */}
         <div className="hidden items-center gap-8 md:flex">

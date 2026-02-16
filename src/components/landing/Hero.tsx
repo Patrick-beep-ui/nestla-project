@@ -17,8 +17,14 @@ export default function Hero() {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section className="relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-36">
-      {/* Decorative gradient blob */}
+    <section id="hero" className="relative overflow-hidden pt-32 pb-24 md:pt-44 md:pb-36" >
+      <img
+        src="/assets/NestlaLogo.svg"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[-10%] top-1/2 hidden h-[600px] -translate-y-1/2 opacity-5 lg:block"
+      />
+
       <div
         className="pointer-events-none absolute -right-32 top-16 h-[500px] w-[500px] rounded-full opacity-30 blur-[120px] md:h-[700px] md:w-[700px]"
         style={{
