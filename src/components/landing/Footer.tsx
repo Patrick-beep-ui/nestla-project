@@ -18,36 +18,42 @@ export default function Footer() {
 
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <img src="/assets/NestlaLogo.svg" alt="Nestla" className="h-6 w-auto" />
-              <span className="font-heading font-semibold text-xl text-white tracking-tight">
+              <img src="/assets/NestlaLogo.svg" alt="Nestla logo" className="h-6 w-auto" />
+              <h2 className="font-heading font-semibold text-xl text-white tracking-tight">
                 nestla
-              </span>
+              </h2>
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-xs">
+            <p className="text-gray-300 text-sm leading-relaxed mb-6 max-w-xs">
               The trust-first real estate platform designed to maximize seller equity through data and concierge-led care.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-600 hover:text-[#63C7FF] transition-colors"><Facebook size={18} /></a>
-              <a href="#" className="text-gray-600 hover:text-[#63C7FF] transition-colors"><Instagram size={18} /></a>
-              <a href="#" className="text-gray-600 hover:text-[#63C7FF] transition-colors"><Linkedin size={18} /></a>
+              <a href="#" aria-label="Facebook" className="text-gray-300 hover:text-[#63C7FF] transition-colors">
+                <Facebook size={18} />
+              </a>
+              <a href="#" aria-label="Instagram" className="text-gray-300 hover:text-[#63C7FF] transition-colors">
+                <Instagram size={18} />
+              </a>
+              <a href="#" aria-label="LinkedIn" className="text-gray-300 hover:text-[#63C7FF] transition-colors">
+                <Linkedin size={18} />
+              </a>
             </div>
           </div>
 
           <div>
-            <h4 className="font-heading font-bold text-white text-sm uppercase tracking-widest mb-6">Product</h4>
-            <ul className="space-y-4 text-sm text-gray-500">
+            <h3 className="font-heading font-bold text-white text-sm uppercase tracking-widest mb-6">Product</h3>
+            <ul className="space-y-4 text-sm text-gray-300">
               <li>
-                <button onClick={() => scrollTo("#how-it-works")} className="hover:text-white transition-colors">
+                <button aria-label="Go to The Nestla Method section" onClick={() => scrollTo("#how-it-works")} className="hover:text-[#63C7FF] transition-colors">
                   The Nestla Method
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollTo("#services")} className="hover:text-white transition-colors">
+                <button aria-label="Go to Services section" onClick={() => scrollTo("#services")} className="hover:text-[#63C7FF] transition-colors">
                   Services
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollTo("#projects")} className="hover:text-white transition-colors">
+                <button aria-label="Go to Projects section" onClick={() => scrollTo("#projects")} className="hover:text-[#63C7FF] transition-colors">
                   Projects
                 </button>
               </li>
@@ -55,20 +61,20 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-heading font-bold text-white text-sm uppercase tracking-widest mb-6">Company</h4>
-            <ul className="space-y-4 text-sm text-gray-500">
+            <h3 className="font-heading font-bold text-white text-sm uppercase tracking-widest mb-6">Company</h3>
+            <ul className="space-y-4 text-sm text-gray-300">
               <li>
-                <button onClick={() => scrollTo("#about")} className="hover:text-white transition-colors">
+                <button aria-label="Go to About Us section" onClick={() => scrollTo("#about")} className="hover:text-[#63C7FF] transition-colors">
                   About Us
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollTo("#contact")} className="hover:text-white transition-colors">
+                <button aria-label="Go to Contact section" onClick={() => scrollTo("#contact")} className="hover:text-[#63C7FF] transition-colors">
                   Contact
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollTo("#support")} className="hover:text-white transition-colors">
+                <button aria-label="Go to Support section" onClick={() => scrollTo("#support")} className="hover:text-[#63C7FF] transition-colors">
                   Support
                 </button>
               </li>
@@ -76,26 +82,27 @@ export default function Footer() {
           </div>
 
           <div className="relative">
-            <h4 className="font-heading font-bold text-white text-sm uppercase tracking-widest mb-6">Legal</h4>
-            <ul className="space-y-4 text-sm text-gray-500">
+            <h3 className="font-heading font-bold text-white text-sm uppercase tracking-widest mb-6">Legal</h3>
+            <ul className="space-y-4 text-sm text-gray-300">
               <li>
-                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" className="hover:text-[#63C7FF] transition-colors">Privacy Policy</a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" className="hover:text-[#63C7FF] transition-colors">Terms of Service</a>
               </li>
             </ul>
 
             <button 
               onClick={scrollToTop}
-              className="mt-12 md:absolute md:bottom-0 md:right-0 h-12 w-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#63C7FF] hover:text-[#0F0F0F] transition-all group"
+              aria-label="Scroll to top"
+              className="mt-12 md:absolute md:bottom-0 md:right-0 h-12 w-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#63C7FF] hover:text-[#0F0F0F] transition-all group focus:outline focus:outline-2 focus:outline-[#63C7FF]"
             >
               <ArrowUp size={20} className="group-hover:-translate-y-1 transition-transform" />
             </button>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-gray-600 font-medium">
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-gray-300 font-medium">
           <span>
             © {new Date().getFullYear()} Nestla LLC | 4411 E. La Palma Ave, Anaheim Ca, 92807 DRE# 01329011
           </span>
