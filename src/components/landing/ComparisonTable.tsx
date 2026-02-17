@@ -57,7 +57,7 @@ export default function ComparisonTable() {
           </h2>
         </div>
 
-        <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/5 bg-[#161616]/40 backdrop-blur-xl shadow-2xl">
+        <div className="mx-auto max-w-5xl overflow-x-auto rounded-3xl border border-white/5 bg-[#161616]/40 backdrop-blur-xl shadow-2xl">
           <table className="w-full border-collapse text-left">
             <thead>
               <tr className="border-b border-white/10">
