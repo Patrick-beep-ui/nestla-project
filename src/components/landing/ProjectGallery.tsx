@@ -171,6 +171,8 @@ export default function ProjectGallery() {
                 <button
                   key={i}
                   onClick={() => goToPage(i)}
+                  aria-label={`Go to page ${i + 1}`}
+                  aria-current={page === i ? "page" : undefined}
                   className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
                     page === i
                       ? "bg-[#63C7FF] scale-125"
