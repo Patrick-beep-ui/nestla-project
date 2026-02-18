@@ -22,6 +22,7 @@ import ProjectGallery from "@/components/landing/ProjectGallery";
 import ProjectGallerySlider from "@/components/landing/ProjectGallerySlider";
 import FounderSection from "@/components/landing/FounderSection";
 import LeadMagnet from "@/components/landing/LeadMagnet";
+import LeadMagnetFounder from "@/components/landing/LeadMagnetFounder";
 import LeadFormGHL from "@/components/landing/LeadFormGHL";
 
 const Index = () => (
@@ -32,25 +33,26 @@ const Index = () => (
       <BriefAbout />
       <StatsBar />
       <Services />
-      <SplitSection />
       <FeatureGrid />
       <ComparisonTable />
-      <LeadMagnet />
+      <LeadMagnetFounder />
       <NumberedCards />
       <ProjectGallery />
-      <FounderSection />
-      {<Testimonials />}
+      <Testimonials />
       <LeadFormGHL />
 
       {/*<TrustBar />*/}
       {/*<Benefits />*/}
+      {/*<SplitSection />*/}
       {/*<CardShowcase />*/}
       {/*<ValueStack />*/}
+      {/*<LeadMagnet />*/}
       {/*<ProjectGallerySlider />*/}
       {/*<PeopleGrid />*/}
       {/*<MetricCards />*/}
       {/*<CtaDownload />*/}
       {/*<FinalCta />*/}
+      {/*<FounderSection />*/}
       {/*<LeadForm />*/}
      
     </main>
