@@ -21,6 +21,7 @@ import Footer from "@/components/landing/Footer";
 import ProjectGallery from "@/components/landing/ProjectGallery";
 import ProjectGallerySlider from "@/components/landing/ProjectGallerySlider";
 import FounderSection from "@/components/landing/FounderSection";
+import LeadMagnet from "@/components/landing/LeadMagnet";
 import LeadFormGHL from "@/components/landing/LeadFormGHL";
 
 const Index = () => (
@@ -34,9 +35,11 @@ const Index = () => (
       <SplitSection />
       <FeatureGrid />
       <ComparisonTable />
+      <LeadMagnet />
       <NumberedCards />
       <ProjectGallery />
       <FounderSection />
+      {<Testimonials />}
       <LeadFormGHL />
 
       {/*<TrustBar />*/}
@@ -47,7 +50,6 @@ const Index = () => (
       {/*<PeopleGrid />*/}
       {/*<MetricCards />*/}
       {/*<CtaDownload />*/}
-      {/*<Testimonials />*/}
       {/*<FinalCta />*/}
       {/*<LeadForm />*/}
      
