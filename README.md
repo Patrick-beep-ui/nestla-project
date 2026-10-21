@@ -1,73 +1,78 @@
-# Welcome to your Lovable project
+# Nestla Seller Concierge Landing Page
 
-## Project info
+A responsive lead-generation experience for Nestla, a seller-concierge brand that guides homeowners through pricing, preparation, and the home-selling process.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Repository scope
 
-## How can I edit this code?
+This repository contains the public marketing and conversion experience implemented as a React/Vite single-page application. It should be understood as the public landing-page implementation in this repository, not as documentation for any separate private application or later platform version.
 
-There are several ways of editing your application.
+## User journey
 
-**Use Lovable**
+The page moves a prospective seller through a structured conversion funnel:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+1. Introduce the seller-concierge value proposition.
+2. Explain Nestla's approach and homeowner-focused service model.
+3. Present services, differentiators, process steps, and supporting proof.
+4. Show project and testimonial content.
+5. Route the visitor to a free seller-review application.
+6. Capture the lead through an embedded GoHighLevel form.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Implemented sections
 
-**Use your preferred IDE**
+- Responsive navigation and hero experience
+- Company and service positioning
+- Statistics and feature sections
+- Comparison and numbered-process components
+- Founder-led lead magnet
+- Project gallery and testimonials
+- GoHighLevel seller-application form
+- Reusable alternative landing-page sections retained for iteration
+- Scroll-reveal interactions and responsive calls to action
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Technical implementation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Framework:** React 18, TypeScript, Vite
+- **UI:** Tailwind CSS, shadcn/ui, Radix UI, Lucide icons
+- **Forms and validation:** React Hook Form and Zod
+- **Server state utilities:** TanStack Query
+- **CRM capture:** Native GoHighLevel embedded form
+- **Testing:** Vitest and React Testing Library
+- **Quality:** ESLint and TypeScript
 
-Follow these steps:
+The page is split into reusable landing components so messaging, section order, and calls to action can be tested or adapted without rebuilding the entire experience.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Local development
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Prerequisites
 
-# Step 3: Install the necessary dependencies.
-npm i
+- Node.js 18 or newer
+- npm
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Setup
+
+~~~bash
+git clone https://github.com/Patrick-beep-ui/nestla-project.git
+cd nestla-project
+npm install
 npm run dev
-```
+~~~
 
-**Edit a file directly in GitHub**
+## Available scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+~~~bash
+npm run dev        # Start the Vite development server
+npm run build      # Create a production build
+npm run preview    # Preview the production build
+npm run lint       # Run ESLint
+npm run test       # Run the Vitest suite
+npm run test:watch # Run tests in watch mode
+~~~
 
-**Use GitHub Codespaces**
+## Integration note
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The seller-review form is loaded from GoHighLevel through its embed script and form URL. Replace the form identifier when adapting the project to another account or environment.
 
-## What technologies are used for this project?
+## Project context
 
-This project is built with:
+This implementation combines frontend engineering with conversion-oriented website development: translating a business offer into a clear user journey, reusable components, responsive presentation, and a CRM-connected lead-capture endpoint.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
